@@ -7,7 +7,7 @@ import (
 	"log"
 	"os"
 
-	pb "github.com/rafaelbartolome/micro-test/consignment-service/proto/consignment"
+	pb "github.com/rafaelbartolome/micro-test-consignment-service/proto/consignment"
 
 	microclient "github.com/micro/go-micro/client"
 	"github.com/micro/go-micro/cmd"
