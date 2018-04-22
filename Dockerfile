@@ -4,9 +4,8 @@ WORKDIR /go/src/github.com/rafaelbartolome/micro-test-consignment-cli
 
 COPY . .
 
-RUN go get -u github.com/golang/dep/cmd/dep
-RUN dep init && dep ensure
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo .
+RUN go get
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo
 
 
 FROM alpine:latest
@@ -18,5 +17,5 @@ WORKDIR /app
 COPY consignment.json /app/consignment.json
 COPY --from=builder /go/src/github.com/rafaelbartolome/micro-test-consignment-cli .
 
-ENTRYPOINT ["./consignment-cli", "consignment.json"]
-CMD ["./consignment-cli"]
+ENTRYPOINT ["./micro-test-consignment-cli", "consignment.json"]
+CMD ["./micro-test-consignment-cli"]
