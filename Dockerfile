@@ -17,5 +17,5 @@ WORKDIR /app
 COPY consignment.json /app/consignment.json
 COPY --from=builder /go/src/github.com/rafaelbartolome/micro-test-consignment-cli .
 
-ENTRYPOINT ["./micro-test-consignment-cli", "consignment.json"]
+ENTRYPOINT ["./micro-test-consignment-cli"]
 CMD ["./micro-test-consignment-cli"]
