@@ -14,7 +14,7 @@ RUN apk --no-cache add ca-certificates
 
 RUN mkdir /app
 WORKDIR /app
-COPY consignment.json /app/consignment.json
+COPY ./consignment.json /app/consignment.json
 COPY --from=builder /go/src/github.com/rafaelbartolome/micro-test-consignment-cli .
 
 ENTRYPOINT ["./micro-test-consignment-cli"]
